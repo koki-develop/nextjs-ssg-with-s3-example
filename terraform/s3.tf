@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "frontend" {
-  bucket = "${local.prefix}-frontend"
-  acl    = "private"
+  force_destroy = true
+  bucket        = "${local.prefix}-frontend"
+  acl           = "private"
 }
 
 resource "aws_s3_bucket_policy" "frontend" {
