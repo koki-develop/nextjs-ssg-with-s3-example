@@ -31,4 +31,6 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1
-      - run: aws sts get-caller-identity
+
+      - name: upload files to s3
+        run: aws s3 sync ./out s3://nextjs-ssg-with-s3-example-frontend --delete
