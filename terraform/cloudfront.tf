@@ -39,6 +39,12 @@ resource "aws_cloudfront_distribution" "frontend" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
+
+  custom_error_response {
+    error_code         = "403"
+    response_code      = "404"
+    response_page_path = "/404/index.html"
+  }
 }
 
 resource "aws_cloudfront_origin_access_identity" "frontend" {}
