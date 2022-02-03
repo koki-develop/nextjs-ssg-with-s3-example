@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 
 const About: NextPage = () => {
+  const router = useRouter()
+  console.log('router:', router)
+
   return (
     <div className={styles.container}>
       <Head>
